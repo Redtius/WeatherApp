@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Forecast, Weather } from './weather';
+import { apiKey } from './apikey';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
   private apiUrl = 'https://api.openweathermap.org/data/2.5/';
-  private apiKey = "9591c22d24266e94a01e9f7ace621ba5";
+  private apiKey = apiKey; //create your file with your api key and name it "apikey.ts"
   private cities:string = '2643743,2988507,2553604,2527082,2561668,2542997';
   constructor(private http:HttpClient) { }
   getWeather(city:string):Observable<Weather>{
