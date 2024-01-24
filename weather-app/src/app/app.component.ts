@@ -28,7 +28,9 @@ import { HeaderComponent } from './header/header.component';
 export class AppComponent implements OnInit{
   title = 'weather-app';
 
-  constructor(private snackbar: MatSnackBar,private updates: SwUpdate) { }
+  constructor(private snackbar: MatSnackBar,
+    private updates: SwUpdate
+    ) { }
 
   ngOnInit() {
     console.log('reload request coming!!');

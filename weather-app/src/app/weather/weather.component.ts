@@ -18,9 +18,9 @@ import { OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit{
 weather:Weather|any;
-forecast:Weather[]=[];
+forecasts:Weather[]=[
+];
 city:string[]=['London','Paris','Madrid','Barcelona','Berlin','Rome'];
-loading:boolean=false;
 
 
 constructor(private WeatherService:WeatherService){}
@@ -30,15 +30,10 @@ search(city:string){
 }
 
 ngOnInit(){
-  this.loading=true;
-  console.log(this.loading);
   this.city.forEach(city=>
     {
-      this.WeatherService.getWeather(city).subscribe(weather=>this.forecast.push(weather));
+      this.WeatherService.getWeather(city).subscribe(weather=>this.forecasts.push(weather));
     });
-    console.log(this.forecast);
-  this.loading=false;
-  console.log(this.loading);
 }
 
 }
