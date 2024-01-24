@@ -18,3 +18,8 @@ export interface Weather {
   icon: string;
   }
 
+  export interface Forecast {
+    list: Weather[];
+    cnt: number;
+    }
+

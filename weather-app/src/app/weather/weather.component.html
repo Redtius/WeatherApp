@@ -17,3 +17,21 @@
   </mat-card-content>
 </mat-card>
 
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let city of forecast">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{city.name}}, {{city.sys.country}}</mat-card-title>
+          <mat-card-subtitle>{{city.weather[0].main}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://openweathermap.org/img/wn/{{city.weather[0].icon}}.png" alt="Weather icon">
+        <mat-card-content>
+          <h1>{{city.main.temp}} &#8451; </h1>
+          <p>Pressure: {{city.main.pressure}} hPa</p>
+          <p>Humidity: {{city.main.humidity}} %</p>
+          <p>Wind: {{city.wind.speed}} m/s</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    </mat-grid-list>
+
